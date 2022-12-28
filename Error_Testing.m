@@ -60,7 +60,7 @@ end
 threshold = [0.1:0.01:0.8];
 dim = size(PMax);
 
-% Runs through all the elements of the PMax cell arrat (which is each .mat file)
+% Runs through all the elements of the PMax cell array (which is each .mat file)
 % and calculates the average of the errors that correspond to pmax values
 % that are greater than the given threshold
 
@@ -228,6 +228,7 @@ for p = 1:dim_pmax(2)
     for h = 1:dim_new_errors(1)
         New_Errors{h}(:,7:8) = [];
     end
+end
 
 % Comparing old errors to new errors
 % for n = 1:dim_new_errors(1)
