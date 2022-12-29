@@ -45,7 +45,7 @@ This respository contains all the code I wrote and used for my graduate research
 * You will also need a `config.toml` file. I included the one I created within this repository
     * Information about this file and what it contains can be found using the second link above as well
 * I included the Anipose LICENSE for distribution purposes since I am sharing a modified version of their code
-## **_AniposeOutput-Formatting_**
+## **_AniposeOutput-Formatting.m_**
 * This code takes the output excel spreadsheet from `Anipose_triangulate.py` and reformats it into a .mat file for analysis
 * All three codes (`Output4Anipose.m`, `Anipose_triangulate.py`, and `AniposeOutput_Formatting`) could probably be condensed into one python code, but at the time I felt more comfortable in MATLAB
 * The sequence that I ran to use Anipose was:
