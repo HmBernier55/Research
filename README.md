@@ -52,3 +52,16 @@ This respository contains all the code I wrote and used for my graduate research
     1. Run `Output4Anipose.m`
     2. Run `Anipose_triangulate.py`
     3. Run `AniposeOutput_Formatting.m`
+## **_BundleAdjustmentData.m_**
+* This code takes a .mat file that contains camera parameters and hand-labeled marker coordinates where the person only labeled specific body parts of the mouse purely for Bundle Adjustment purposes
+* The markers must all be hand-labeled meaning the short cut of pressing `t` for triangulate when hand-labeling is turned off
+    * This is done to get more accurate results for Bundle Adjustment
+1. It loads in the .mat file
+2. Asks the user to select which marker positions were labeled through a GUI
+    * Hold CTRL to select multiple marker positions
+3. Creates all the needed outputs like matrix of 2D coordinates, matrix of 3D coordinates, index arrays for cameras and 3D coordinates, camera matrices, and principle offset values
+4. Saves all the outputs into one .mat file called `BundleAdjustment.mat`
+## **_BundleAdj.py_**
+* This code takes the output .mat file from `BundleAdjustmentData.m` and runs bundle adjustment on the input data
+* The bundle adjustment code PySBA can be found here:
+    * https://github.com/jahdiel/pySBA
