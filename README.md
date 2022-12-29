@@ -32,5 +32,16 @@ This respository contains all the code I wrote and used for my graduate research
 * If you use this code, ensure that you change all the paths to reflect where your files are and where you want to save the specific files
 * Make sure you keep the same file names for the outputs so it matches with the code from Anipose
     * Such as calibration.toml
-
-
+## **_Anipose-triangulate.py_**
+* This code takes the output excel spreadsheets from `Output4Anipose.m` and the `calibration.toml` file and runs them through Anipose
+* Make sure to make adjustments to the path on this code so it saves the output to the folder you want it to
+    * This is in the last line of the code with the variable p3ds
+    * The triangulate function takes the `config.toml` file, the path to the calibration folder (meaning it has the `calibration.toml` file in it), the file name dictionary created within the code which has all the names of the excel spreadsheets that were created within `Output4Anipose.m`, and the name of the output excel spreadsheet that contains the newly imputed 3D coordinates
+* I had to make some adjustments to the `triangulate.py` code from Anipose because they originally used h5 files instead of excel spreadsheets to load in the 3D coordinates, so copy and paste the `triangulate.py` code from this repository in place of the one from Anipose to use it with the `Anipose_triangulate.py` code
+* Here is a link to the Anipose repository:
+    * https://github.com/lambdaloop/anipose
+* Information about Anipose, how to use it, and how to install it can be found here:
+    * https://anipose.readthedocs.io/en/latest/
+* You will also need a `config.toml` file. I included the one I created within this repository
+    * Information about this file and what it contains can be found using the second link above as well
+* I included the Anipose LICENSE for distribution purposes since I am sharing a modified version of their code

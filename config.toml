@@ -1,0 +1,44 @@
+project = 'mouse'
+
+# Specify the path to the DeepLabCut project folder
+model_folder = 'C:\Users\12053\anaconda3\envs\Hunter_research\New-Project'
+
+nesting = 1
+
+# Parameters for Labeling
+
+[labeling]
+scheme = [
+	["EarL", "EarR", "Snout"],
+	["EarL", "SpineF"],
+	["EarR", "SpineF"],
+	["Snout", "SpineF"],
+	["SpineF", "SpineM", "TailB"],
+	["TailB", "TailM", "TailE"],
+	["SpineF", "ShoulderL", "ElbowL", "WristL", "ForepawL"],
+	["SpineF", "ShoulderR", "ElbowR", "WristR", "ForepawR"],
+	["SpineM", "KneeL", "AnkleL", "HindpawL"],
+	["SpineM", "KneeR", "AnkleR", "HindpawR"]
+]
+
+# Parameters for Triangulation
+[triangulation]
+triangulate = true
+cam_regex = '-cam([A-Z])$'
+ransac = false
+optim = true
+constraints = [
+	["EarL", "EarR"], ["EarL", "Snout"], ["EarR", "Snout"], ["EarL", "SpineF"],
+	["EarR", "SpineF"], ["Snout", "SpineF"], ["SpineF", "SpineM"], ["SpineM", "TailB"],
+	["TailB", "TailM"], ["TailM", "TailE"], ["SpineF", "ShoulderL"],
+	["ShoulderL", "ElbowL"], ["ElbowL", "WristL"], ["WristL", "ForepawL"],
+	["SpineF", "ShoulderR"], ["ShoulderR", "ElbowR"], ["ElbowR", "WristR"],
+	["WristR", "ForepawR"], ["SpineM", "KneeL"], ["KneeL", "AnkleL"],
+	["AnkleL", "HindpawL"], ["SpineM", "KneeR"], ["KneeR", "AnkleR"], ["AnkleR", "HindpawR"]
+]
+scale_smooth = 2
+scale_length = 1.5
+scale_length_weak = 0.5
+reproj_error_threshold = 3
+score_threshold = 0.6
+n_deriv_smooth = 2
