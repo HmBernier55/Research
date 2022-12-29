@@ -21,5 +21,16 @@ This respository contains all the code I wrote and used for my graduate research
 4. The fourth section titled "Imputation of New Coordinates Based on Thresholding" is used to impute new 3D coordinates based on pmax threshold values
     * The output at the end of the loops is a cell array of newly calculated errors based on the newly imputed 3D coordinates that can be used to compare to the old errors
 5. The rest of the sections I used for plotting and visualization. They can be deleted or reused.
+## **_Output4Anipose.m_**
+* This code takes the camera parameters and 3D predictions from DANNCE and puts them into a format that can be read and used by Anipose for smoothing or imputation of new 3D predictions
+1. It loads in the two .mat files
+    * One containing camera parameters and camera names
+    * One containing 3D predictions from DANNCE
+2. Converts the 3D predictions to 2D
+3. Outputs the 2D data to excel spreadsheets
+4. Creates the calibration.toml file that is used by Anipose
+* If you use this code, ensure that you change all the paths to reflect where your files are and where you want to save the specific files
+* Make sure you keep the same file names for the outputs so it matches with the code from Anipose
+    * Such as calibration.toml
 
 
